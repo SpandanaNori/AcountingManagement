@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Chart Of Accounts</title>
+<style>
+#head1{
+    width: 450px;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 0px 0px 0px 50px;
+    text-align:center; 
+    font-size:20px;   
+}
+
+
+</style>
+ <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+ 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+
+<script>
+
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myObj = JSON.parse(this.responseText);
+        document.getElementById("demo1").value = myObj.Head;
+        var contents1 = $("#demo1").val();
+        $("#id1").val(contents1);
+        
+        document.getElementById("demo1").value = myObj.LegalEntity;
+        var contents2 = $("#demo1").val();
+        $("#id2").val(contents2);
+        
+        document.getElementById("demo1").value = myObj.Country;
+        var contents3 = $("#demo1").val();
+        $("#id3").val(contents3);
+        
+        document.getElementById("demo1").value = myObj.Branch;
+        var contents4 = $("#demo1").val();
+        $("#id4").val(contents4);
+        
+        document.getElementById("demo1").value = myObj.Product;
+        var contents5 = $("#demo1").val();
+        $("#id5").val(contents5);
+        
+        document.getElementById("demo1").value = myObj.Currency;
+        var contents6 = $("#demo1").val();
+        $("#id6").val(contents6);
+        
+        document.getElementById("demo1").value = myObj.Book;
+        var contents7 = $("#demo1").val();
+        $("#id7").val(contents7);
+        
+        document.getElementById("demo1").value = myObj.SWIFTID;
+        var contents8 = $("#demo1").val();
+        $("#id8").val(contents8);
+        
+        //console.log("hi"+content2);
+    }
+};
+xmlhttp.open("GET", "proposals.txt", true);
+xmlhttp.send();
+
+</script>
+
+</head>
+<body>
+<div id="head1">Chart Of Accounts</div>
+<div id="head1">
+<p id="demo1"></p>
+<table style="text-align:center">
+
+<tr> <td><div >Head</div></td><td><div><input type="text" id="id1" /></div></td></tr>
+<tr> <td> <div id="in">Legal Entity</div></td><td><div><input type="text" id="id2" ></input></div></td></tr>
+<tr> <td> <div id="in">Country</div></td><td><div><input type="text" id="id3" ></input></div></td></tr>
+<tr> <td> <div id="in">Branch</div></td><td><div><input type="text" id="id4" ></input></div></td></tr>
+<tr> <td> <div id="in">Product</div></td><td><div><input type="text" id="id5" ></input></div></td></tr>
+<tr> <td> <div id="in">Currency</div></td><td><div><input type="text" id="id6" ></input></div></td></tr>
+<tr> <td> <div id="in">Book</div></td><td><div><input type="text" id="id7" ></input></div></td></tr>
+<tr> <td> <div id="in">SWIFT ID</div></td><td><div><input type="text" id="id8" readonly></input></div></td></tr>
+
+ </table>
+<a href=""><input type="submit" value="Save"/></a>
+</div>
+
+</body>
+</html>
