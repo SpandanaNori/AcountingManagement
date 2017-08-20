@@ -12,25 +12,33 @@ table, th, td {
 </head>
 
 <body>
-
+<a href ="http://www.google.com">here</a>
     <script>
-        var myApp = angular.module('myApp', []);
+        var myApp = angular.module("myApp",["ngRoute"]);
         myApp.controller('myCtrl', function ($scope, $http) {
-
             $scope.myfunc = function () {
-
                 $http.get('GL.txt').success(function (data) {
                     $scope.transactions = data;
-
                 });
+                
+               /* var myApp = angular.module("myApp", ['ngRoute']);
+
+                (function(app){
+                  "use strict";
+                  app.controller("myController", function($scope, $http){
+                    $http.get('GL.txt').then(function(prd){
+                      $scope.transactions = transactions.data;
+                    });
+                  });
+                })(myApp);
             }
         }
-            );
+            );*/
     </script>
 
     
       <div ng-controller="myCtrl">
-        <button type="button" ng-click="myfunc()">View Transactions</button>
+        <button type="button" ng-click="myfunc()">Click</button>
         <div>
             <table>
                 <tr>
@@ -64,3 +72,4 @@ table, th, td {
     </div>
 </body>
 </html>
+

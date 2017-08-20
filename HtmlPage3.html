@@ -1,0 +1,48 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>View RFP Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+
+</head>
+
+<body>
+
+    <script>
+        var myApp = angular.module('myApp', []);
+        myApp.controller('myCtrl', function ($scope, $http) {
+
+            $scope.myfunc = function () {
+
+                $http.get('proposals1.txt').success(function (data) {
+                    $scope.proposals = data;
+
+                });
+            }
+        }
+            );
+    </script>
+
+    <div ng-controller="myCtrl">
+        <button type="button" ng-click="myfunc()">View all The Chart Of Accounts</button>
+
+
+
+        <div>
+            <table>
+                <tr>
+                    <th>Head</th>
+                    <th>Branch</th>
+                    <th>SWIFT ID</th>
+                </tr>
+                <tr ng-repeat="i in proposals">
+                    <td>{{i.buyerid}}</td>
+                    <td><a href="HtmlPage4.html">{{i.proposalid}}</a></td>
+                    <td>{{i.productid}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

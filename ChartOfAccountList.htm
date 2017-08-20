@@ -1,0 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>List Of Chart Of Accounts</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+
+</head>
+
+<body>
+
+    <script>
+        var myApp = angular.module('myApp', []);
+        myApp.controller('myCtrl', function ($scope, $http) {
+
+            $scope.myfunc = function () {
+
+                $http.get('proposals1.txt').success(function (data) {
+                    $scope.proposals = data;
+
+                });
+            }
+        }
+            );
+    </script>
+
+    <div ng-controller="myCtrl">
+        <button type="button" ng-click="myfunc()">View all The Chart Of Accounts</button>
+
+
+
+        <div>
+            <table>
+                <tr>
+                    <th style="text-align:center;width:450px">Head</th>
+                    <th style="text-align:center;width:450px">Branch</th>
+                    <th style="text-align:center;width:450px">SWIFT ID</th>
+                </tr>
+                <tr ng-repeat="i in proposals">
+                    <td style="text-align:center;width:450px">{{i.buyerid}}</td>
+                    <td style="text-align:center;width:450px">{{i.proposalid}}</td>
+                    <td style="text-align:center;width:450px"><a href="DisplayChartOfAccounts.html">{{i.productid}}</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

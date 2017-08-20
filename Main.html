@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+
+<body ng-app="myApp">
+
+<p><a href="#!Main"><input type="button" value="Home" /></a></p>
+
+<a href="#!ChartOfAccountList"><input type="button" value="Charts Of Account List" /></a>
+<a href="#!Transactions"><input type="button" value="General Ledger" /></a>
+
+
+<div ng-view></div>
+
+<script>
+var app = angular.module("myApp", ["ngRoute"]);
+app.config(function($routeProvider) {
+    $routeProvider
+   /* .when("/Main", {
+        templateUrl : "Main.html"
+    })*/
+    .when("/ChartOfAccountList", {
+        templateUrl : "http://localhost:8080/ChartOfAccounts/DisplayChartOfAccounts.html"
+    })
+    .when("/Transactions", {
+        templateUrl : "http://localhost:8080/ChartOfAccounts/TransactionTable.html"
+    });
+});
+</script>
+
+</body>
+</html>

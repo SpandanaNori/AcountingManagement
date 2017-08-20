@@ -17,29 +17,33 @@
 
 </style>
  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
- 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+ <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
 
+<script src="https://raw.githubusercontent.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js."></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+<script>
+
+console.log(coa);
+</script>
 </head>
 <body>
 <div id="head1">Chart Of Accounts</div>
 <div id="head1">
 <p id="demo1"> </p>
-
+<form action="" method="post">
 <table style="text-align:center">
 
-<tr> <td><div >Head</div></td><td><div><input type="text" /></div></td></tr>
-<tr> <td> <div id="in">Legal Entity</div></td><td><div><input type="text" ></input></div></td></tr>
-<tr> <td> <div id="in">Country</div></td><td><div><input type="text"></input></div></td></tr>
-<tr> <td> <div id="in">Branch</div></td><td><div><input type="text"></input></div></td></tr>
-<tr> <td> <div id="in">Product</div></td><td><div><input type="text"></input></div></td></tr>
-<tr> <td> <div id="in">Currency</div></td><td><div><input type="text"></input></div></td></tr>
-<tr> <td> <div id="in">Book</div></td><td><div><input type="text"></input></div></td></tr>
-
+<tr> <td><div >Head</div></td><td><div><input type="text" id="Head"/></div></td></tr>
+<tr> <td> <div id="in">Legal Entity</div></td><td><div><input type="text" id="LegalEntity" ></input></div></td></tr>
+<tr> <td> <div id="in">Country</div></td><td><div><input type="text" id="Country"></input></div></td></tr>
+<tr> <td> <div id="in">Branch</div></td><td><div><input type="text" id="Branch"></input></div></td></tr>
+<tr> <td> <div id="in">Product</div></td><td><div><input type="text" id="Product"></input></div></td></tr>
+<tr> <td> <div id="in">Currency</div></td><td><div><input type="text" id="Currency"></input></div></td></tr>
+<tr> <td> <div id="in">Book</div></td><td><div><input type="text" id="Book"></input></div></td></tr>
  </table>
-<br/>
-<a href=""><input type="submit" value="Save"/></a>
+<input type="submit" value="Save"/>
+</form>
 </div>
-
 </body>
 </html>
