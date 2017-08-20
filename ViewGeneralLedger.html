@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>General Ledger</title>
+<style>
+table, th, tr {
+    border: 1px solid black;
+}
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+ 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+
+<script>
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myObj = JSON.parse(this.responseText);
+        document.getElementById("demo1").value = myObj.S_No;
+        var contents1 = $("#demo1").val();
+        $("#id1").val(contents1);
+        
+        document.getElementById("demo1").value = myObj.Entry_No;
+        var contents2 = $("#demo1").val();
+        $("#id2").val(contents2);
+        
+        document.getElementById("demo1").value = myObj.Payment_Date;
+        var contents3 = $("#demo1").val();
+        $("#id3").val(contents3);
+        
+        document.getElementById("demo1").value = myObj.Due_Date;
+        var contents4 = $("#demo1").val();
+        $("#id4").val(contents4);
+        
+        document.getElementById("demo1").value = myObj.Customer_Name;
+        var contents5 = $("#demo1").val();
+        $("#id5").val(contents5);
+        
+        document.getElementById("demo1").value = myObj.Customer_Number;
+        var contents6 = $("#demo1").val();
+        $("#id6").val(contents6);
+        
+        document.getElementById("demo1").value = myObj.Invoice_Number;
+        var contents7 = $("#demo1").val();
+        $("#id7").val(contents7);
+        
+        document.getElementById("demo1").value = myObj.Transaction_Number;
+        var contents8 = $("#demo1").val();
+        $("#id8").val(contents8);
+        
+        document.getElementById("demo1").value = myObj.Book_Number;
+        var contents9 = $("#demo1").val();
+        $("#id9").val(contents9);
+        
+        document.getElementById("demo1").value = myObj.Debit;
+        var contents10 = $("#demo1").val();
+        $("#id10").val(contents10);
+        
+        document.getElementById("demo1").value = myObj.Credit;
+        var contents11 = $("#demo1").val();
+        $("#id11").val(contents11);
+        
+              
+    }
+};
+xmlhttp.open("GET", "GL.txt", true);
+xmlhttp.send();
+
+</script>
+
+
+</head>
+<body>
+<p id="demo1"> </p>
+<div>
+<table>
+  <tr>
+   		<th>S.No</th>
+   		<th>Entry No.</th> 
+        <th >Payment Date</th>
+        <th >Due Date</th>
+        <th >Customer Name</th>
+        <th >Customer Number</th>
+        <th >Invoice Number</th>
+        <th >Transaction Number</th>
+        <th >Book Number</th>
+        <th >Debit</th>
+        <th >Credit</th>
+    
+  </tr>
+  
+  <tr>
+  		<th ><div><input  id="id1" ></input></div> </th>
+  	    <th ><div><input  id="id2" readonly></input></div></th> 
+        <th ><div><input type="text" id="id3" readonly></input></div></th>
+        <th ><div><input type="text" id="id4" readonly></input></div></th>
+        <th ><div><input type="text" id="id5" readonly></input></div></th>
+        <th ><div><input type="text" id="id6" readonly></input></div></th>
+        <th ><div><input type="text" id="id7" readonly></input></div></th>
+        <th ><div><input type="text" id="id8" readonly></input></div></th>
+        <th ><div><input type="text" id="id9" readonly></input></div></th>
+        <th ><div><input type="text" id="id10" readonly></input></div></th>
+        <th ><div><input type="text" id="id11" readonly></input></div></th>
+  </tr>
+  </div>
+</body>
+</html>
