@@ -1,0 +1,41 @@
+[  {
+    "Head": "RBS",
+    "LegalEntity": "Something",
+    "Country": "England",
+    "Branch": "London",
+    "Product": "Money",
+    "Currency": "GBP",
+    "Book": "69",
+    "SWIFTID": "SW42245FF"
+  },
+    {
+    "Head": "RBS",
+    "LegalEntity": "Something",
+    "Country": "England",
+    "Branch": "London",
+    "Product": "Money",
+    "Currency": "GBP",
+    "Book": "69",
+    "SWIFTID": "SW42245FF"
+  },
+    {
+    "Head": "RBS",
+    "LegalEntity": "Something",
+    "Country": "England",
+    "Branch": "London",
+    "Product": "Money",
+    "Currency": "GBP",
+    "Book": "69",
+    "SWIFTID": "SW42245FF"
+  },
+    {
+    "Head": "RBS",
+    "LegalEntity": "Something",
+    "Country": "England",
+    "Branch": "London",
+    "Product": "Money",
+    "Currency": "GBP",
+    "Book": "69",
+    "SWIFTID": "SW42245FF"
+  }
+  ]

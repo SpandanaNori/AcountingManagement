@@ -1,0 +1,75 @@
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>View Transactions</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+<style>
+table, th, td {
+    border: 2px solid black;
+}
+</style>
+</head>
+
+<body>
+<a href ="http://www.google.com">here</a>
+    <script>
+        var myApp = angular.module("myApp",["ngRoute"]);
+        myApp.controller('myCtrl', function ($scope, $http) {
+            $scope.myfunc = function () {
+                $http.get('GL.txt').success(function (data) {
+                    $scope.transactions = data;
+                });
+                
+               /* var myApp = angular.module("myApp", ['ngRoute']);
+
+                (function(app){
+                  "use strict";
+                  app.controller("myController", function($scope, $http){
+                    $http.get('GL.txt').then(function(prd){
+                      $scope.transactions = transactions.data;
+                    });
+                  });
+                })(myApp);
+            }
+        }
+            );*/
+    </script>
+
+    
+      <div ng-controller="myCtrl">
+        <button type="button" ng-click="myfunc()">Click</button>
+        <div>
+            <table>
+                <tr>
+                    <th>S.No</th>
+   					<th>Entry No.</th> 
+      				<th >Payment Date</th>
+        			<th >Due Date</th>
+        			<th >Customer Name</th>
+        			<th >Customer Number</th>
+        			<th >Invoice Number</th>
+        			<th >Transaction Number</th>
+        			<th >Book Number</th>
+        			<th >Debit</th>
+        			<th >Credit</th>
+                </tr>
+                <tr ng-repeat="i in transactions">
+                    <td>{{i.S_No}}</td>
+                    <td>{{i.Entry_No}}</td>
+                    <td>{{i.Payment_Date}}</td>
+                    <td>{{i.Due_Date}}</td>
+                    <td>{{i.Customer_Name}}</td>
+                    <td>{{i.Customer_Number}}</td>
+                    <td>{{i.Invoice_Number}}</td>
+                    <td>{{i.Transaction_Number}}</td>
+                    <td>{{i.Book_Number}}</td>
+                    <td>{{i.Debit}}</td>
+                    <td>{{i.Credit}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+

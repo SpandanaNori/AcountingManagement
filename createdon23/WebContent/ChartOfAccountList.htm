@@ -1,0 +1,50 @@
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>List Of Chart Of Accounts</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+<script type="text/javascript" src="script.js"></script>
+</head>
+
+<body ng-app="myApp"  ng-controller="COAListCtrl">
+
+ 
+
+    <div>
+        <button type="button" ng-click="COALfunc()">View all The Chart Of Accounts</button>
+
+
+
+        <div>
+            <table>
+                <tr>
+                    <th style="text-align:center;width:450px">Head</th>
+                    <th style="text-align:center;width:450px">Legal Entity</th>
+                    <th style="text-align:center;width:450px">Country</th>
+                    <th style="text-align:center;width:450px">Branch</th>
+                    <th style="text-align:center;width:450px">Product</th>
+                    <th style="text-align:center;width:450px">Currency</th>
+                    <th style="text-align:center;width:450px">Book</th>
+                    <th style="text-align:center;width:450px">SWIFT ID</th>
+                </tr>
+                <tr ng-repeat="i in coaL">
+                    <td style="text-align:center;width:450px">{{i.head}}</td>
+                    <td style="text-align:center;width:450px">{{i.legalEntity}}</td>
+                    <td style="text-align:center;width:450px">{{i.country}}</td>
+                    <td style="text-align:center;width:450px">{{i.branch}}</td>
+                    <td style="text-align:center;width:450px">{{i.product}}</td>
+                    <td style="text-align:center;width:450px">{{i.currency}}</td>
+                    <td style="text-align:center;width:450px">{{i.book}}</td>
+                    <td style="text-align:center;width:450px">{{i.productSwiftID}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
